@@ -1,0 +1,1 @@
+Simple Server side rendering project
