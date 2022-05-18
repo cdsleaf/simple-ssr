@@ -9,7 +9,16 @@ module.exports = {
   },
   module: {
     rules: [
-      
-    ]
-  }
-}
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './template/index.html',
+    }),
+  ],
+  mode: 'production',
+};
