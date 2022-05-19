@@ -3,20 +3,20 @@
  import About from './About';
 
  export default function App({ page }) {
-   const [page, setPage] = useState(page);
+   const [currentPage, setCurrentPage] = useState(page);
    useEffect(() => {
      window.onpopstate = event => {
-       setPage(event.state);
+      setCurrentPage(event.state);
      };
    }, []);
 
    function onChangePage(e) {
      const newPage = e.target.dataset.page;
      window.history.pushState(newPage, '', `/${newPage}`);
-     setPage(newPage);
+     setCurrentPage(newPage);
    }
 
-   const PageComponent = page === 'home' ? Home : About;
+   const PageComponent = currentPage === 'home' ? Home : About;
 
    return (
      <div className="container">
@@ -30,4 +30,3 @@
      </div>
    );
  }
- 
