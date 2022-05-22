@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Icon from './icon.png';
 import Home from './Home';
 import About from './About';
 
@@ -33,6 +34,7 @@ export default function App({ page }) {
         About
       </button>
       <PageComponent />
+      <img src={Icon} />
     </Container>
   );
 }
