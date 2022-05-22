@@ -12,9 +12,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
-        options: {
-          configFile: path.resolve(__dirname, '.babelrc.client.js'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            configFile: path.resolve(__dirname, '.babelrc.client.js'),
+          },
         },
       },
     ],

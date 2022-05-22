@@ -10,13 +10,13 @@ const html = fs.readFileSync(
   path.resolve(__dirname, '../dist/index.html'),
   'utf8',
 );
-app.use('./dist', express.static('dist'));
+app.use('/dist', express.static('dist'));
 app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 app.get('*', (req, res) => {
   const renderString = renderToString(<App page="home" />);
   const result = html.replace(
     '<div id="root"></div>',
-    '<div id="root">${renderString}</div>',
+    `<div id="root">${renderString}</div>`,
   );
   res.send(result);
 });
