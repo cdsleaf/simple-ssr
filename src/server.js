@@ -2,10 +2,6 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import * as url from 'url';
-import { renderToString } from 'react-dom/server';
-import React from 'react';
-import { ServerStyleSheet } from 'styled-components';
-import App from './App';
 import { renderPage, prerenderPages } from './common';
 
 const app = express();
